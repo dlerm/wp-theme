@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	window.test = 'yes';
 // Variables
 var $homeIntro = $('.home-screen');
 var $homeIntroOverlay = $('.home-screen-overlay');

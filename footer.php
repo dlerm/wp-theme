@@ -7,7 +7,12 @@
 	</div>
 </div>
  -->
+<<<<<<< HEAD
 <?php wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/mycustomscript.js"></script> 
+=======
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/mycustomscript.js"></script>
+<?php wp_footer(); ?>
+>>>>>>> c33d322eff27fb5fe3e6f6698eb3706c1dfacad3
 </body>
 </html>

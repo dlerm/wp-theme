@@ -7,7 +7,6 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,600,400,900,300italic,400italic,700italic,600italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />
-  <!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/main.css" type="text/css" media="screen,projection" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" type="text/css" media="screen,projection" />
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <?php wp_head(); ?>

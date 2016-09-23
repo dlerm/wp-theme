@@ -26,7 +26,7 @@
       <div class="works-screen screen">
         <!-- <div class="scroll-helper flex" data-scroll-to="work-tiles"><i class="fa fa-chevron-down"></i></div> -->
         <div class="work-tiles flex" data-scroll-frame="work-tiles">
-        <?php 
+          <?php
           $loop_index = 0;
           if ( have_posts() ) {
             while ( have_posts() ) {
@@ -40,18 +40,18 @@
               $logo_src = get_field('client-logo');
               ?>
               <div class="work-tile flex <?=$loop_class?>">
-               <a class="work-tile--image-link" href="<?php the_field('website-link'); ?>" target="_blank">
-                 <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
-                 <img class="image-link--image" src="<?=$image[0]?>"  />
-               </a>
-               <div class="work-tile--project-details flex black">
-                 <?php if ($logo_src) { ?>
-                 <img class="project-details--logo" src="<?php// echo $logo_src?>" />
-                 <?php } else { ?>
-                 <h4 class="project-details--title"><?php echo get_the_title() ?></h4>
-                 <?php } ?>
-               </div>
-             </div>
+                <a class="work-tile--image-link" href="<?php the_field('website-link'); ?>" target="_blank">
+                  <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
+                  <img class="image-link--image" src="<?=$image[0]?>"  />
+                </a>
+                <div class="work-tile--project-details flex black">
+                  <?php if ($logo_src) { ?>
+                  <img class="project-details--logo" src="<?=$logo_src?>" />
+                  <?php } else { ?>
+                  <h4 class="project-details--title"><?php echo get_the_title() ?></h4>
+                  <?php } ?>
+                </div>
+              </div>
               <?php
               $loop_index++;
             } /* end while */
