@@ -13,11 +13,11 @@ var opacityScoller = function(currentScroll) {
 		if(currentScroll >= nameScreenTop){
 			$('.work-tiles').addClass('on-screen');
 			$('.works-screen h2').addClass('on-screen');
-			$('#header-logo').addClass('black'); 
+			$('.logo').addClass('black'); 
 		} else {
 			$('.work-tiles').removeClass('on-screen');
 			$('.works-screen h2').removeClass('on-screen');
-			$('#header-logo').removeClass('black'); 
+			$('.logo').removeClass('black'); 
 		}
 	}
 };
@@ -43,8 +43,8 @@ var toggleScrollHelper = function (currentScroll) {
 $(window).scroll(function() {
 	var currentScroll = $(window).scrollTop();
 	opacityScoller(currentScroll);
-	fadeIntoScreen(currentScroll);
-	toggleScrollHelper(currentScroll);
+	// fadeIntoScreen(currentScroll);
+	// toggleScrollHelper(currentScroll);
 });
 
 $('.scroll-helper').on('click', function() {

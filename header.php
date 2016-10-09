@@ -14,17 +14,16 @@
 
 <body>
   <header id="header">
-    <div id="nav-wrapper">
-      <nav id="main-nav" class="flex">
-        <a href="/" id="header-logo" class="flex" title="Daniel Lerman">
-          <div class="circle"></div>
-          <span class="firstname">D</span>
-          <span class="lastname">L</span>
+    <div class="header--nav-container">
+      <nav class="header--nav flex">
+        <a href="/" class="logo flex" title="Daniel Lerman">
+          <span class="logo--initial logo--firstname">D</span>
+          <span class="logo--initial logo--lastname">L</span>
         </a>
       </nav>
       <div class="social-links">
-        <a class="linkedin" href="https://www.linkedin.com/in/daniel-lerman-2933498b"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-        <a class="github" href="https://github.com/dlerm"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a class="social-link linkedin" href="https://www.linkedin.com/in/daniel-lerman-2933498b" target="_blank" title="Daniel Lerman LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a class="social-link github" href="https://github.com/dlerm" target="_blank" title="Daniel Lerman Github"><i class="fa fa-github" aria-hidden="true"></i></a>
       </div>
     </div>
   </header>
