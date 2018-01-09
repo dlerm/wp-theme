@@ -41,9 +41,6 @@ const browserSync        = require('browser-sync').create();
 
 const GulpSSH            = require('gulp-ssh');
 
-
-// console.log('USER:',process.env.SFTP_USER);
-
 const config = {
   host: process.env.SFTP_HOST,
   port: process.env.SFTP_PORT,
@@ -56,10 +53,6 @@ const gulpSSH = GulpSSH({
   ignoreErrors: false,
   sshConfig: config
 });
-
-const isProduction = () => (gitrev.branch() === 'production') ? true : false;
-const isAccountTemplate = file => file.path.indexOf('templates/customers') !== -1;
-const addLiquidExtension = path => path.extname += '.liquid';
 
 const postcssPlugins = [
   autoprefixer({ browsers: ['> 2.5% in US', 'ie >= 10', 'Android >= 4.3', 'iOS >= 7'] })
@@ -111,18 +104,17 @@ gulp.task('vendor-scripts', () => {
 
 gulp.task('sftp-upload-styles', ['styles'], () => {
   return gulp.src('./style.css')
-  .pipe(gulpSSH.sftp('write', '/home/danie209/public_html/wp-content/themes/daniel-lerman/style.css'))
-  // .pipe(gulpSSH.dest('/home/danie209/public_html/wp-content/themes/daniel-lerman/'));
+  .pipe(gulpSSH.sftp('write', process.env.SFTP_STYLES_PATH))
 });
 
 gulp.task('sftp-upload-scripts', ['scripts', 'vendor-scripts'], () => {
   return gulp.src(['js/script.js', 'js/vendor.js'])
-  .pipe(gulpSSH.dest('/home/danie209/public_html/wp-content/themes/daniel-lerman/js'));
+  .pipe(gulpSSH.dest(process.env.SFTP_SCRIPTS_PATH));
 });
 
 gulp.task('sftp-upload-file', () => {
   return gulp.src('./*.php')
-  .pipe(gulpSSH.dest('/home/danie209/public_html/wp-content/themes/daniel-lerman/'));
+  .pipe(gulpSSH.dest(process.env.SFTP_TEMPLATES_PATH));
 });
 
 gulp.task('build', ['styles', 'scripts', 'vendor-scripts']);

@@ -1,3 +1,4 @@
+// Pulled directly from wordpress
 #wpadminbar {
   top: auto;
   bottom: 0;
@@ -42,14 +43,14 @@ html {
 
 body {
   color: #fff;
-  font-family: "Titillium Web",sans-serif;
+  font-family: $tillium;
   text-rendering: optimizeLegibility;
   background: #000;
 }
 
 a {
   text-decoration: none;
-  color: #75F3DD;
+  color: $mint;
 }
 
 article,aside,details,figcaption,figure,footer,header,main,nav,section {
@@ -129,7 +130,7 @@ em {
 }
 
 .mint {
-  color: #75F3DD;
+  color: $mint;
 }
 
 .align-left {
@@ -244,7 +245,7 @@ em {
 }
 
 .above-white .logo--initial,.social-link {
-  color: #75F3DD;
+  color: $mint;
 }
 
 .social-link,.social-link i {
@@ -513,7 +514,7 @@ em {
 
 .intro h4 {
   font-weight: 500;
-  color: #75F3DD;
+  color: $mint;
   height: 35px;
 }
 
@@ -522,7 +523,7 @@ em {
 }
 
 .intro h4 span {
-  color: #75F3DD;
+  color: $mint;
   letter-spacing: -1.5px;
 }
 
@@ -545,7 +546,7 @@ em {
   height: calc(100vh + 25px);
   bottom: calc(0px - 100vh);
   right: 83px;
-  background: linear-gradient(transparent .25%,#75F3DD 20%,transparent);
+  background: linear-gradient(transparent .25%,$mint 20%,transparent);
 }
 
 .trailing-letter:after {
@@ -555,7 +556,7 @@ em {
   display: block;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #75F3DD;
+  border-top: 6px solid $mint;
   bottom: 2px;
   right: 83px;
   position: fixed;
@@ -578,7 +579,34 @@ em {
 }
 
 .name-definition--phonetic {
+  position: relative;
   font-weight: 600;
+  cursor: none;
+
+  span {
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+    left: 0;
+    top: 0;
+  }
+
+  .is-secondary {
+    opacity: 0;
+    position: absolute;
+    color: $mint;
+  }
+
+  &:hover {
+    .is-primary {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .is-secondary {
+      opacity: 1;
+      position: static;
+    }
+  }
 }
 
 .name-definition--part-speech {
@@ -605,6 +633,10 @@ em {
 
 .definition-list--item {
   white-space: nowrap;
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .definition-list--item .desktop-only,.definition-list--item.desktop-only {
@@ -721,7 +753,7 @@ em {
 .work-type {
   font-size: 16px;
   font-weight: 600;
-  color: #75F3DD;
+  color: $mint;
   transition: .4s ease-in-out;
   display: none;
 }
@@ -876,7 +908,7 @@ em {
 
 .input-container:after {
   position: absolute;
-  color: #75F3DD;
+  color: $mint;
   bottom: 0;
   height: 40px;
   line-height: 40px;
@@ -921,7 +953,7 @@ em {
 
 .input-field {
   margin: 0;
-  font-family: "Titillium Web";
+  font-family: $tillium;
   position: relative;
   border: 2px solid #FFF;
   box-shadow: none;
@@ -933,7 +965,7 @@ em {
 }
 
 .input-field:focus,.is-finished .input-field {
-  border-color: #75F3DD;
+  border-color: $mint;
 }
 
 .input-field:focus {
@@ -963,7 +995,7 @@ em {
 }
 
 .input-field.input--submit:focus,.input-field.input--submit:hover {
-  color: #75F3DD;
+  color: $mint;
 }
 
 .info {

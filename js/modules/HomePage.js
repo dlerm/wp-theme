@@ -19,6 +19,7 @@
         $(self).closest('.input-container').removeClass('is-typing').addClass('is-finished');
       }
     }
+
     $('.input-field').each(function() {
       var value = $(this).val();
       var isTyped = $(this).closest('.input-container').hasClass('is-typing');
@@ -31,12 +32,14 @@
         $(this).closest('.input-container').addClass('is-typing').removeClass('is-finished'); 
       }
     });
+
     var allInputsFilled = true;
     $('.input-field').each(function() {
       if($(this).val().length <= 0){
         allInputsFilled = false;
       }
     });
+
     if(allInputsFilled){
       $contactForm.find('.submit--container').addClass('is-active');
     } else {
@@ -60,10 +63,12 @@
         data: $(this).serialize(),
         method: $(this).attr('method')
       });
+
       formSubmitRequest.fail(function(err) {
         alert('Error', err);
         console.log(err);
       });
+      
       formSubmitRequest.done(function(data) {
         alert('Request success');
         console.log(data);

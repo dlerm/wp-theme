@@ -63,7 +63,7 @@ if($_POST['submitted']){
   ?>
   <?php get_header(); ?>
   <?php //get_template_part('header2'); ?>
-  <img class="parralax-image" src="//blog.addthiscdn.com/wp-content/uploads/2015/08/code-cleanup.png">
+  <img class="parralax-image" src="//blog.addthiscdn.com/wp-content/uploads/2015/08/code-cleanup.png" alt="Parallax Background - Code Screen - Daniel Lerman">
   <main class="main">
     <div class="wrapper">
       <div class="page-contents">
@@ -71,28 +71,25 @@ if($_POST['submitted']){
         <div class="home-screen screen flex">
           <div class="home-screen--overlay"></div>
           <div class="intro">
-            <!-- <h2>Front end developer</h2>
-            <div class="trailing-letter"></div> -->
           </div>
         </div>
         <!-- SECTION 2 -->
         <div class="name-screen screen white flex" white-screen>
           <div class="name-definition">
             <h2 class="name-definition--name">Daniel Lerman</h2>
-            <h4 class="name-definition--phonetic">[ dan - yuh l ] [ luhr - men ]</h4>
+            <h4 class="name-definition--phonetic"><span class="is-primary">[dan-yuh l] [luhr-man]</span><span class="is-secondary">[ dee ] [ money ]</span></h4>
             <h4 class="name-definition--part-speech bold">noun</h4>
             <ul class="name-definition--definition-list">
-              <li class="definition-list--item">A bachelor of Computer Science<span class="desktop-only">, working at <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a></span>.</li>
-              <li class="definition-list--item">Master of front-end, student of back-end.</li>
-              <li class="definition-list--item">Based in San Diego, California.</li>
-              <li class="definition-list--item mobile-only">Developer for <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a>.</li>
-              <li class="definition-list--item">Avid snowboarder.</li>
+              <li class="definition-list--item">Front-End Development Lead<span class="desktop-only">, working at <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a></span></li>
+              <li class="definition-list--item mobile-only">Developer for <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a></li>
+              <li class="definition-list--item">Bachelor of Computer Science</li>
+              <li class="definition-list--item">Based in San Diego, California</li>
+              <li class="definition-list--item">Avid snowboarder</li>
             </ul>
           </div>
         </div>
         <!-- SECTION 3 -->
         <div class="works-screen">
-          <!-- <div class="scroll-helper flex" data-scroll-to="work-tiles"><i class="fa fa-chevron-down"></i></div> -->
           <div class="work-tiles flex" data-scroll-frame="work-tiles">
             <?php
             $loop_index = 0;
