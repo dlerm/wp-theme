@@ -63,17 +63,10 @@ if($_POST['submitted']){
   ?>
   <?php get_header(); ?>
   <?php //get_template_part('header2'); ?>
-  <img class="parralax-image" src="//blog.addthiscdn.com/wp-content/uploads/2015/08/code-cleanup.png" alt="Parallax Background - Code Screen - Daniel Lerman">
+  <img class="parralax-image" src="https://wallpapertag.com/wallpaper/full/1/a/f/124013-amazing-geometric-backgrounds-2560x1600-for-iphone-6.jpg" alt="Parallax Background - Code Screen - Daniel Lerman">
   <main class="main">
     <div class="wrapper">
       <div class="page-contents">
-        <!-- SECTION 1 -->
-        <div class="home-screen screen flex">
-          <div class="home-screen--overlay"></div>
-          <div class="intro">
-          </div>
-        </div>
-        <!-- SECTION 2 -->
         <div class="name-screen screen white flex" white-screen>
           <div class="name-definition">
             <h2 class="name-definition--name">Daniel Lerman</h2>
@@ -88,7 +81,6 @@ if($_POST['submitted']){
             </ul>
           </div>
         </div>
-        <!-- SECTION 3 -->
         <div class="works-screen">
           <div class="work-tiles flex" data-scroll-frame="work-tiles">
             <?php
@@ -119,7 +111,6 @@ if($_POST['submitted']){
           ?>
         </div>
       </div>
-      <!-- SECTION 4 -->
       <div class="contact screen white flex" id="contact" white-screen>
         <div class="contact-form-container" scroll="contact">
           <h2 class="contact-form-title">Talk to me.</h2>
