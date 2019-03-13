@@ -42,10 +42,10 @@ html {
 }
 
 body {
-  color: #fff;
+  color: $white;
   font-family: $tillium;
   text-rendering: optimizeLegibility;
-  background: #000;
+  background: $black;
 }
 
 a {
@@ -126,7 +126,7 @@ em {
 }
 
 .white {
-  color: #FFF;
+  color: $white;
 }
 
 .mint {
@@ -142,7 +142,7 @@ em {
 }
 
 .bg-white {
-  background-color: #FFF;
+  background-color: $white;
 }
 
 @-webkit-keyframes fadeIn {
@@ -238,7 +238,7 @@ em {
 .logo--initial {
   transition: all .2s ease-in-out;
   text-transform: uppercase;
-  color: #FFF;
+  color: $white;
   z-index: 1;
   line-height: 34px;
   letter-spacing: -6px;
@@ -268,13 +268,13 @@ em {
   position: absolute;
   top: 4px;
   left: 2px;
-  box-shadow: 5px 0 8px -6px #000;
+  box-shadow: 5px 0 8px -6px $black;
   opacity: .8;
   z-index: -1;
 }
 
 .above-white .logo--initial.logo--firstname:after {
-  box-shadow: 5px 0 8px -3px #FFF;
+  box-shadow: 5px 0 8px -3px $white;
 }
 
 .social-links {
@@ -312,7 +312,7 @@ em {
 }
 
 .black .social-link {
-  color: #000;
+  color: $black;
 }
 
 .social-link:hover {
@@ -353,7 +353,7 @@ em {
 }
 
 #footer .footer--nav-container {
-  border: 1vw solid #FFF;
+  border: 1vw solid $white;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -404,7 +404,7 @@ em {
 }
 
 #footer .footer--nav-container .footer--nav .logo .logo--initial {
-  color: #FFF;
+  color: $white;
   font-size: 175px;
   font-size: 16.5vw;
   line-height: 1;
@@ -417,9 +417,9 @@ em {
   width: 67%;
   max-width: 67%;
   flex-basis: 67%;
-  border-left: 1vw solid #000;
-  border-left: 1vw solid #FFF;
-  color: #FFF;
+  border-left: 1vw solid $black;
+  border-left: 1vw solid $white;
+  color: $white;
   text-align: center;
 }
 
@@ -509,7 +509,7 @@ em {
 .intro h2 {
   font-weight: 700;
   line-height: .75;
-  color: #FFF;
+  color: $white;
 }
 
 .intro h4 {
@@ -537,7 +537,7 @@ em {
 }
 
 .home-screen--overlay.bg-white {
-  background: linear-gradient(transparent,#FFF 95%);
+  background: linear-gradient(transparent,$white 95%);
 }
 
 .trailing-letter {
@@ -565,7 +565,7 @@ em {
 .name-screen {
   align-items: center;
   justify-content: center;
-  background: linear-gradient(transparent,#000);
+  background: linear-gradient(transparent,$black);
 }
 
 .name-definition {
@@ -645,7 +645,7 @@ em {
 
 @media only screen and (min-width:480px) {
   .name-screen {
-    background: linear-gradient(rgba(0,0,0,.3),#000);
+    background: linear-gradient(rgba(0,0,0,.3),$black);
   }
 
   .name-definition--definition-list {
@@ -662,7 +662,7 @@ em {
 }
 
 .works-screen {
-  background: #FFF;
+  background: $white;
   transition: .5s ease-in-out;
   position: relative;
 }
@@ -688,7 +688,7 @@ em {
   max-width: 50%;
   flex-basis: 50%;
   transition: .2s ease-in-out;
-  color: #000;
+  color: $black;
   font-size: 24px;
   position: relative;
   overflow: hidden;
@@ -773,7 +773,7 @@ em {
 }
 
 .work-title {
-  color: #FFF;
+  color: $white;
   text-transform: uppercase;
   transform: translateY(0);
   transition: .4s ease-in-out;
@@ -825,9 +825,9 @@ em {
     width: auto;
     margin-top: 10px;
     padding: 10px 15px;
-    border: 1px solid #FFF;
+    border: 1px solid $white;
     position: relative;
-    color: #FFF;
+    color: $white;
     z-index: 0;
     transition: .4s ease-in-out;
   }
@@ -837,7 +837,7 @@ em {
     position: absolute;
     bottom: 7px;
     height: 1px;
-    background-color: #FFF;
+    background-color: $white;
     width: 10%;
     left: 50%;
     transform: translateX(-50%);
@@ -856,7 +856,7 @@ em {
 .contact {
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#000,rgba(0,0,0,0));
+  background: linear-gradient($black,rgba(0,0,0,0));
   min-height: 70vh;
 }
 
@@ -893,7 +893,8 @@ em {
   font-weight: 600;
 }
 
-.input-container {
+.input-container,
+.input-container-wrap {
   margin: 20px 0;
   width: 100%;
 }
@@ -925,52 +926,79 @@ em {
   display: none;
 }
 
-.input-field,.input-label {
+.input-field,
+.input-label,
+.input-container-wrap input,
+.input-container-wrap label {
   display: block;
   width: 100%;
   max-width: 100%;
 }
 
-.input-label {
+.input-label,
+.input-container-wrap label {
   font-weight: 700;
   letter-spacing: .5px;
   font-size: 1.5rem;
-}
+  text-transform: lowercase;
 
-@media only screen and (min-width:767px) {
-  .input-label {
-    font-size: initial;
+  span {
+    font-size: 0;
+    &:after {
+      content: '*';
+      color: $mint;
+      font-size: 1.5rem;
+    }
   }
 }
 
-.input-field {
+.input-field,
+.input-container-wrap input.input-container {
   margin: 0;
   font-family: $tillium;
   position: relative;
-  border: 2px solid #FFF;
+  border: 2px solid $white;
   box-shadow: none;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 10px 45px 10px 15px;
   font-weight: 600;
   background-color: transparent;
-  color: #FFF;
+  color: $white;
+  width: 100%;
+  max-width: 100%;
 }
 
-.input-field:focus,.is-finished .input-field {
+.input-field:focus,
+.is-finished .input-field,
+.input-container-wrap input:focus,
+.input-container-wrap textarea:focus {
   border-color: $mint;
 }
 
-.input-field:focus {
+.input-field:focus,
+.input-container-wrap input:focus,
+.input-container-wrap textarea:focus {
   outline: 0;
 }
 
-.input-field.input--email,.input-field.input--phone,.input-field.input--text {
+.input-field.input--email,
+.input-field.input--phone,
+.input-field.input--text,
+.input-container-wrap input {
   height: 40px;
 }
 
-.input-field.input--textarea {
+.input-field.input--textarea,
+.input-container-wrap textarea {
   height: 120px;
   resize: none;
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid $white;
+  color: $white;
+  font-size: 1rem;
+  padding: 10px 45px 10px 15px;
+  font-weight: 600;
 }
 
 .input-field.input--submit {
@@ -982,11 +1010,31 @@ em {
   transition: .3s ease-in-out;
 }
 
+.contact-submit button {
+  background-color: transparent;
+  border: 2px solid $white;
+  color: $white;
+  padding: 10px 30px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  transition: 0.25s ease-in-out; 
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $mint;
+    border-color: $mint;
+    color: $black;
+  }
+}
+
 .input-field.input--submit i {
   transition: .2s ease-in-out;
 }
 
-.input-field.input--submit:focus,.input-field.input--submit:hover {
+.input-field.input--submit:focus,
+.input-field.input--submit:hover {
   color: $mint;
 }
 

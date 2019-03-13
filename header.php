@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Daniel Lerman's professional web developement portfolio." />
   <title>Daniel Lerman | Developer</title>
-  <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,600,400,900' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,400,500,600,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=<?php echo rand(1, 99999999999); ?>" type="text/css" media="screen,projection" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" type="text/css" media="screen,projection" />
   <link rel="icon" href="<?=get_stylesheet_directory_uri()?>/favicon.ico" type="image/x-icon" />

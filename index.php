@@ -113,12 +113,15 @@ if($_POST['submitted']){
       </div>
       <div class="contact screen white flex" id="contact" white-screen>
         <div class="contact-form-container" scroll="contact">
+          
+          <?php the_content(); ?>
+<!-- 
           <h2 class="contact-form-title">Talk to me.</h2>
           <h4 class="contact-form-notes">If you want to hire me, ask a question or say hello</h4>
           <form class="contacts-form" action="/#contact" method="POST">
             <?php echo $response; ?>
             <input type="hidden" name="submitted" value="1">
-            <input class="info" type="text" name="contact-info" value="">
+            <input class="input-container email--container flex info" type="text" name="contact-reason" value="">
             <div class="input-container text--container flex">
               <label class="input-label" for="contact-name"><h4 class="label-text">name<span class="asterisk mint">*</span></h4></label>
               <input class="input-field input--text" type="text" name="contact-name" required>
@@ -134,7 +137,7 @@ if($_POST['submitted']){
             <div class="input-container submit--container flex">
               <button class="input-field input--submit" type="submit" value="send"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>
