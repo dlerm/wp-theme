@@ -58,10 +58,11 @@
 
     $contactForm.on('submit', function(e) {
       e.preventDefault();
+      var $form = $(this);
       var formSubmitRequest = $.ajax({
-        url: $(this).attr('action'),
-        data: $(this).serialize(),
-        method: $(this).attr('method')
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        method: $form.attr('method')
       });
 
       formSubmitRequest.fail(function(err) {
@@ -70,11 +71,8 @@
       });
       
       formSubmitRequest.done(function(data) {
-        alert('Request success');
-        console.log(data);
-        if(data.indexOf('Thanks! Your message has been sent.') > -1){
-          alert('success');
-        }
+        $form.prepend('<p class="mint contact-form-success">Thanks for submitting your message!</p>');
+        $form.trigger('reset');
       });
     });
 

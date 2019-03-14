@@ -1,0 +1,126 @@
+#footer {
+  padding: 8vw 4vw;
+}
+
+@media only screen and (min-width:480px) {
+  #footer {
+    padding: 4vw;
+  }
+}
+
+@media only screen and (min-width:767px) {
+  #footer {
+    padding: 2vw 4vw;
+  }
+}
+
+@media only screen and (min-width:1280px) {
+  #footer {
+    padding: 0 4vw;
+  }
+}
+
+#footer .footer--nav-container {
+  border: 1vw solid $white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2vw;
+  justify-content: center;
+  transition: transform .2s ease-in-out;
+  transform: scale(1);
+}
+
+#footer .footer--nav-container .footer--nav .logo .logo--initial:after,.home-screen {
+  display: none;
+}
+
+@media only screen and (min-width:480px) {
+  #footer .footer--nav-container {
+    transform: scale(.9);
+  }
+}
+
+@media only screen and (min-width:767px) {
+  #footer .footer--nav-container {
+    transform: scale(.75);
+  }
+}
+
+@media only screen and (min-width:1280px) {
+  #footer .footer--nav-container {
+    transform: scale(.6);
+  }
+}
+
+#footer .footer--nav-container .footer--nav {
+  padding: 0;
+  align-items: center;
+  text-align: center;
+  width: 33%;
+  max-width: 33%;
+  flex-basis: 33%;
+}
+
+#footer .footer--nav-container .footer--nav .logo {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+#footer .footer--nav-container .footer--nav .logo .logo--initial {
+  color: $white;
+  font-size: 175px;
+  font-size: 16.5vw;
+  line-height: 1;
+  letter-spacing: -1.5vw;
+  transition: transform .3s ease-in-out;
+}
+
+#footer .footer--nav-container .footer-content {
+  padding: 2vw 4vw 0;
+  width: 67%;
+  max-width: 67%;
+  flex-basis: 67%;
+  border-left: 1vw solid $black;
+  border-left: 1vw solid $white;
+  color: $white;
+  text-align: center;
+}
+
+.intro,.intro h4 {
+  text-align: right;
+}
+
+#footer .footer--nav-container .footer-content h1 {
+  font-size: 6vw;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer--nav-container .footer-content h2 {
+  font-size: 4vw;
+  text-transform: lowercase;
+  letter-spacing: -.15vw;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#footer .footer--nav-container .footer-content .social-links {
+  padding-top: 2vw;
+}
+
+#footer .footer--nav-container .footer-content .social-links .social-link {
+  padding: 0 1vw;
+  font-size: 22px;
+}
+
+@media only screen and (min-width:767px) {
+  #footer .footer--nav-container .footer-content .social-links .social-link {
+    font-size: 30px;
+  }
+}

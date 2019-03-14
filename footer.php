@@ -26,10 +26,10 @@
 
   ga('create', 'UA-86672514-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor.js"></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/script.js"></script>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor.js?v=<?php echo rand(1000000000, 999999999999); ?>"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/script.js?v=<?php echo rand(1000000000, 999999999999); ?>"></script>
 <script type="text/javascript">
   (function () {
     HomePage.init();

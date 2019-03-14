@@ -372,3 +372,10 @@ function jeherve_remove_all_jp_css() {
   wp_deregister_style( 'jetpack-widgets' ); // Widgets
 }
 add_action('wp_print_styles', 'jeherve_remove_all_jp_css' );
+
+function jetpackcom_contact_confirmation() {
+  $conf = __( 'Thanks for your message.', 'plugin-textdomain' );
+  return $conf;
+}
+
+add_filter( 'grunion_contact_form_success_message', 'jetpackcom_contact_confirmation' );
