@@ -49,7 +49,7 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.2.4",
     "inquirer": "^3.0.1",
-    "open": "0.0.5",
+    "open": "^6.0.0",
     "postcss-shopify-liquid-expander": "^0.0.3",
     "resemblejs": "^2.2.4",
     "run-sequence": "^1.1.1",
