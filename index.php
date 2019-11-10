@@ -9,8 +9,8 @@
           <h4 class="name-definition--phonetic"><span class="is-primary">[dan-yuh l] [luhr-man]</span><span class="is-secondary">[ dee ] [ money ]</span></h4>
           <h4 class="name-definition--part-speech bold">noun</h4>
           <ul class="name-definition--definition-list">
-            <li class="definition-list--item">Front-End Development Lead<span class="desktop-only">, working at <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a></span></li>
-            <li class="definition-list--item mobile-only">Developer for <a href="//bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank">BVACCEL</a></li>
+            <li class="definition-list--item">Front-End Development Lead<span class="desktop-only">, working at <a href="https://bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank" rel="noopener noreferrer">BVACCEL</a></span></li>
+            <li class="definition-list--item mobile-only">Developer for <a href="https://bvaccel.com" title="BVACCEL, the largest Shopify agency in the world." target="_blank" rel="noopener noreferrer">BVACCEL</a></li>
             <li class="definition-list--item">Bachelor of Computer Science</li>
             <li class="definition-list--item">Based in San Diego, California</li>
             <li class="definition-list--item">Avid snowboarder</li>
@@ -35,7 +35,7 @@
                   <div class="overlay--content">
                     <p class="work-type"><?=the_field('client-project-type')?></p>
                     <p class="work-title"><?echo get_the_title(); ?></p>
-                    <a class="work-link btn" href="<?=the_field('client-website-url')?>" target="_blank" title="<?echo get_the_title(); ?>">View Site</a>
+                    <a class="work-link btn" href="<?=the_field('client-website-url')?>" target="_blank" rel="noopener noreferrer" title="<?echo get_the_title(); ?>" rel="noopener noreferrer">View Site</a>
                   </div>
                 </div>
               </div>

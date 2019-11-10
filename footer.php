@@ -10,8 +10,8 @@
     <h1>Daniel Lerman</h1>
     <h2>Front end developer</h2>
       <div class="social-links social--horizontal">
-        <a class="social-link linkedin" href="https://www.linkedin.com/in/daniel-lerman-2933498b" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-        <a class="social-link github" href="https://github.com/dlerm" target="_blank" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a class="social-link linkedin" href="https://www.linkedin.com/in/daniel-lerman-2933498b" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a class="social-link github" href="https://github.com/dlerm" target="_blank" rel="noopener noreferrer" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a>
         <a class="social-link contact-mail" title="Email" scroll-trigger="contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </div>
     </div>
@@ -28,8 +28,8 @@
   ga('send', 'pageview');
 </script>
 
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor.js?v=<?php echo rand(1000000000, 999999999999); ?>"></script>
-<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/script.js?v=<?php echo rand(1000000000, 999999999999); ?>"></script>
+<!-- <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor.js"></script> -->
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/script.js"></script>
 <script type="text/javascript">
   (function () {
     HomePage.init();
