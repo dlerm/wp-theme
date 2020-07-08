@@ -1,0 +1,60 @@
+.vis-nav {
+  padding-bottom: 0;
+}
+
+.vis-nav__btn {
+  flex: 1;
+
+  @include mobile-only {
+    padding: 0 2px;
+  }
+}
+
+.vis-nav__content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-top: 52%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.25);
+    z-index: 2;
+
+    @include tablet-up {
+      transition: 0.25s ease-in-out;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 0 0 1px rgba($black, 0.4);
+  }
+
+  .vis-nav__btn:hover & {
+    &:before {
+      @include tablet-up {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.vis-nav__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: $white;
+  margin: 0;
+}

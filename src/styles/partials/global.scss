@@ -1,0 +1,164 @@
+#wpadminbar {
+  top: auto;
+  bottom: 0;
+}
+
+.logo--initial,
+strong {
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  margin-top: 0 !important;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+body {
+  color: $white;
+  font-family: $tillium;
+  text-rendering: optimizeLegibility;
+  background: $black;
+}
+
+a {
+  text-decoration: none;
+  color: $mint;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 .h2 {
+  font-size: 2.4rem;
+}
+
+@media only screen and (min-width: 767px) {
+  h2,
+  .h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  h2,
+  .h2 {
+    font-size: 3.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4,
+h5 {
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 767px) {
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+em {
+  font-style: italic;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.white {
+  color: $white;
+}
+
+.mint {
+  color: $mint;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+}

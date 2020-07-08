@@ -1,0 +1,65 @@
+.menu-toggle {
+  display: none;
+  padding: 0;
+  flex: 3;
+
+  @include mobile-only {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.menu-toggle__btn {
+  width: 42px;
+  padding: $size-00 0;
+}
+
+.menu-toggle__lines {
+  position: relative;
+  width: $size-4;
+  height: 30px;
+}
+
+.menu-toggle__line {
+  position: absolute;
+  height: $size-0;
+  width: 30px;
+  background-color: $black;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+
+  &--1 {
+    top: 0;
+    left: 0;
+  }
+
+  &--2 {
+    top: 12px;
+    left: 6px;
+  }
+
+  &--3 {
+    top: 24px;
+    left: 12px;
+  }
+
+  .menu-toggle__btn.is-active & {
+    &--2 {
+      transform: scale(0, 1);
+      opacity: 0;
+    }
+
+    &--1 {
+      top: 39%;
+      left: 14%;
+      transform: rotate(45deg);
+    }
+
+    &--3 {
+      top: 39%;
+      left: 14%;
+      transform: rotate(-45deg);
+    }
+  }
+}

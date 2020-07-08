@@ -1,0 +1,26 @@
+/*!
+ Theme Name: Daniel Lerman
+ Theme URI: https://github.com/dlerm/wp-theme
+ Author: Daniel Lerman
+ Author URI: http://dlerman.com
+ Description: A custom wordpress theme for Daniel Lerman
+ Version: 1.1.0
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Tags: custom, responsive
+ Text Domain: daniel-lerman
+*/
+
+@charset 'UTF-8';
+
+@import 'partials/variables';
+
+@import 'partials/reset';
+
+@import 'partials/global';
+
+@import 'partials/header';
+
+@import 'partials/footer';
+
+@import 'partials/index';
