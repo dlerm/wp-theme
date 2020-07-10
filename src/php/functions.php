@@ -181,3 +181,9 @@ function jetpackcom_contact_confirmation() {
 }
 
 add_filter( 'grunion_contact_form_success_message', 'jetpackcom_contact_confirmation' );
+
+add_action( 'wp_enqueue_scripts', 'remove_default_style_setup', PHP_INT_MAX );
+function remove_default_style_setup() {
+  global $wp_styles;
+  $wp_styles->queue = array();
+}

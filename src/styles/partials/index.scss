@@ -2,7 +2,7 @@
   min-height: 50vh;
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (min-width: 992px) {
   .screen {
     min-height: 100vh;
   }
@@ -27,7 +27,8 @@
   height: 7.5vh;
 }
 
-.name-screen,.work-tile-overlay {
+.name-screen,
+.work-tile-overlay {
   align-items: center;
 }
 
@@ -35,7 +36,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
@@ -49,7 +50,7 @@
 
 .intro h2 {
   font-weight: 700;
-  line-height: .75;
+  line-height: 0.75;
   color: $white;
 }
 
@@ -59,7 +60,9 @@
   height: 35px;
 }
 
-.work-tile,.work-tile-overlay .overlay--content,.works-screen h2 {
+.work-tile,
+.work-tile-overlay .overlay--content,
+.works-screen h2 {
   text-align: center;
 }
 
@@ -74,11 +77,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .home-screen--overlay.bg-white {
-  background: linear-gradient(transparent,$white 95%);
+  background: linear-gradient(transparent, $white 95%);
 }
 
 .trailing-letter {
@@ -87,7 +90,7 @@
   height: calc(100vh + 25px);
   bottom: calc(0px - 100vh);
   right: 83px;
-  background: linear-gradient(transparent .25%,$mint 20%,transparent);
+  background: linear-gradient(transparent 0.25%, $mint 20%, transparent);
 }
 
 .trailing-letter:after {
@@ -106,7 +109,7 @@
 .name-screen {
   align-items: center;
   justify-content: center;
-  background: linear-gradient(transparent,$black);
+  background: linear-gradient(transparent, $black);
 }
 
 .name-definition {
@@ -122,7 +125,7 @@
 .name-definition--phonetic {
   position: relative;
   font-weight: 600;
-  cursor: none;
+  cursor: crosshair;
 
   span {
     display: inline-block;
@@ -156,17 +159,21 @@
 
 .name-definition--definition-list {
   list-style: disc;
-  font-size: .875rem;
+  font-size: 0.875rem;
   padding-left: 24px;
+
+  h2 {
+    font: inherit;
+  }
 }
 
-@media only screen and (min-width:767px) {
+@media only screen and (min-width: 767px) {
   .name-definition--definition-list {
     font-size: 1rem;
   }
 }
 
-@media only screen and (min-width:1280px) {
+@media only screen and (min-width: 1280px) {
   .name-definition--definition-list {
     font-size: 1.3rem;
   }
@@ -180,37 +187,40 @@
   }
 }
 
-.definition-list--item .desktop-only,.definition-list--item.desktop-only {
+.definition-list--item .desktop-only,
+.definition-list--item.desktop-only {
   display: none;
 }
 
-@media only screen and (min-width:480px) {
+@media only screen and (min-width: 480px) {
   .name-screen {
-    background: linear-gradient(rgba(0,0,0,.3),$black);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), $black);
   }
 
   .name-definition--definition-list {
     padding-left: 40px;
   }
 
-  .definition-list--item .mobile-only,.definition-list--item.mobile-only {
+  .definition-list--item .mobile-only,
+  .definition-list--item.mobile-only {
     display: none;
   }
 
-  .definition-list--item .desktop-only,.definition-list--item.desktop-only {
+  .definition-list--item .desktop-only,
+  .definition-list--item.desktop-only {
     display: initial;
   }
 }
 
 .works-screen {
   background: $white;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   position: relative;
 }
 
 .works-screen h2 {
   font-weight: 700;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .works-screen h2 span {
@@ -228,47 +238,48 @@
   width: 50%;
   max-width: 50%;
   flex-basis: 50%;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   color: $black;
   font-size: 24px;
   position: relative;
   overflow: hidden;
 }
 
-.work-tile[data-index="14"] {
+.work-tile[data-index='14'] {
   display: none !important;
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (min-width: 992px) {
   .work-tile {
     width: 33.3334%;
     max-width: 33.3334%;
     flex-basis: 33.3334%;
   }
-  .work-tile[data-index="13"] {
-    display: none
-  } 
+  .work-tile[data-index='13'] {
+    display: none;
+  }
 }
 
-@media only screen and (min-width:1280px) {
+@media only screen and (min-width: 1280px) {
   .work-tile {
     width: 25%;
     max-width: 25%;
     flex-basis: 25%;
   }
-  .work-tile[data-index="13"] {
+  .work-tile[data-index='13'] {
     display: block;
   }
 }
 
 .work-tile-logo {
   display: block;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   width: 100%;
-  height: auto; 
+  height: auto;
 }
 
-.work-link,.work-tile-overlay {
+.work-link,
+.work-tile-overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -279,29 +290,30 @@
 .work-tile-overlay {
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.3);
-  transition: .3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
 }
 
 .work-type {
   font-size: 16px;
   font-weight: 600;
   color: $mint;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   display: none;
 }
 
-.contact-form-title,.work-title {
+.contact-form-title,
+.work-title {
   font-weight: 700;
 }
 
-@media only screen and (min-width:767px) {
+@media only screen and (min-width: 767px) {
   .work-type {
     display: block;
   }
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: 1024px) {
   .work-type {
     opacity: 0;
     transform: translateY(-10px);
@@ -317,20 +329,20 @@
   color: $white;
   text-transform: uppercase;
   transform: translateY(0);
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   font-size: 1.2rem;
   padding: 0 15px;
   line-height: 1;
 }
 
-@media only screen and (min-width:480px) {
+@media only screen and (min-width: 480px) {
   .work-title {
     font-size: 1.4rem;
     line-height: 2;
   }
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: 1024px) {
   .work-title {
     transform: translateY(-5px);
     font-size: 1.8rem;
@@ -348,7 +360,7 @@
   color: transparent;
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: 1024px) {
   .work-link {
     opacity: 0;
     transform: translateY(10px);
@@ -360,7 +372,7 @@
   transform: translateY(0);
 }
 
-@media only screen and (min-width:767px) {
+@media only screen and (min-width: 767px) {
   .work-link {
     height: auto;
     width: auto;
@@ -370,7 +382,7 @@
     position: relative;
     color: $white;
     z-index: 0;
-    transition: .4s ease-in-out;
+    transition: 0.4s ease-in-out;
   }
 
   .work-link:after {
@@ -382,11 +394,12 @@
     width: 10%;
     left: 50%;
     transform: translateX(-50%);
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 }
 
-.contacts-form,.input-container {
+.contacts-form,
+.input-container {
   position: relative;
 }
 
@@ -397,11 +410,11 @@
 .contact {
   align-items: center;
   justify-content: center;
-  background: linear-gradient($black,rgba(0,0,0,0));
+  background: linear-gradient($black, rgba(0, 0, 0, 0));
   min-height: 70vh;
 }
 
-@media only screen and (min-width:1024px) {
+@media only screen and (min-width: 1024px) {
   .contact {
     min-height: 100vh;
   }
@@ -412,19 +425,19 @@
   padding: 80px 20px;
 }
 
-@media only screen and (min-width:480px) {
+@media only screen and (min-width: 480px) {
   .contact-form-container {
     width: 90vw;
   }
 }
 
-@media only screen and (min-width:767px) {
+@media only screen and (min-width: 767px) {
   .contact-form-container {
     width: 70vw;
   }
 }
 
-@media only screen and (min-width:1280px) {
+@media only screen and (min-width: 1280px) {
   .contact-form-container {
     width: 55vw;
   }
@@ -483,7 +496,7 @@
 .input-label,
 .input-container-wrap label {
   font-weight: 700;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-size: 1.5rem;
   text-transform: lowercase;
 
@@ -552,7 +565,7 @@
   padding: 0;
   border: none;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .contact-submit button {
@@ -562,7 +575,7 @@
   padding: 10px 30px;
   font-size: 1.5rem;
   font-weight: 900;
-  transition: 0.25s ease-in-out; 
+  transition: 0.25s ease-in-out;
   cursor: pointer;
 
   &:hover,
@@ -575,7 +588,7 @@
 }
 
 .input-field.input--submit i {
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .input-field.input--submit:focus,

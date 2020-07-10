@@ -6,11 +6,11 @@ const bind = () => {
       const target =
         document.getElementById(scroll) ||
         document.querySelector(`[data-scroll-position="${scroll}"]`);
-      const header = document.getElementById('header');
-      const scrollOffset =
-        target.offsetTop - header.getBoundingClientRect().height;
+      // const header = document.getElementById('header');
+      // const scrollOffset =
+      //   target.offsetTop - header.getBoundingClientRect().height;
       window.scrollTo({
-        top: scrollOffset,
+        top: target.offsetTop,
         behavior: 'smooth',
       });
     });

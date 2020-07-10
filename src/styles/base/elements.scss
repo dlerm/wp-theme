@@ -63,5 +63,6 @@ button {
 }
 
 #wpadminbar {
-  display: none;
+  top: auto !important;
+  bottom: 0 !important;
 }

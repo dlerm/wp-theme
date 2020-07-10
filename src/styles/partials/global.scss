@@ -1,6 +1,6 @@
 #wpadminbar {
-  top: auto;
-  bottom: 0;
+  top: auto !important;
+  bottom: 0 !important;
 }
 
 .logo--initial,
@@ -50,11 +50,13 @@ ul {
   list-style: none;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 4.5rem;
 }
 
-h2 .h2 {
+h2,
+.h2 {
   font-size: 2.4rem;
 }
 
@@ -72,28 +74,34 @@ h2 .h2 {
   }
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 1.8rem;
 }
 
 h4,
-h5 {
+.h4,
+h5,
+.h5 {
   font-size: 1rem;
 }
 
 @media only screen and (min-width: 767px) {
-  h4 {
+  h4,
+  .h4 {
     font-size: 1.3rem;
   }
 }
 
 @media only screen and (min-width: 1280px) {
-  h4 {
+  h4,
+  .h4 {
     font-size: 1.6rem;
   }
 }
 
-p {
+p,
+.text {
   font-size: 1.2rem;
 }
 
