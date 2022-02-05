@@ -236,6 +236,7 @@ function register_custom_post_type_endpoint( $namespace, $path, $method, $post_t
             $posts[$key]->$field = $value;
           }
         }
+        return $posts;
       }
     ));
   });
@@ -248,14 +249,82 @@ function register_custom_post_type_endpoint( $namespace, $path, $method, $post_t
  * /<post-type-path>/:slug  - get single <post_type> with matching slug
  */
 
-// $custom_post_types_arr = [
-//   'tracks' => 'track',
-//   'albums' => 'album',
-//   'music-videos' => 'music_video'
-// ];
+$custom_post_types_arr = [
+  'git-actions' => 'git-actions'
+];
 
-// foreach ($custom_post_types_arr as $path => $post_type) {
-//   register_custom_post_type_endpoint('api/v1', $path, 'GET', $post_type, -1, -1 );
-//   register_custom_post_type_endpoint('api/v1', $path.'/(?P<id>\d+)', 'GET', $post_type, 1, 1 );
-//   register_custom_post_type_endpoint('api/v1', $path.'/(?P<slug>\S+)', 'GET', $post_type, 1, 1 );
-// }
+foreach ($custom_post_types_arr as $path => $post_type) {
+  register_custom_post_type_endpoint('api/v1', $path, 'GET', $post_type, -1, -1 );
+  register_custom_post_type_endpoint('api/v1', $path.'/(?P<id>\d+)', 'GET', $post_type, 1, 1 );
+  register_custom_post_type_endpoint('api/v1', $path.'/(?P<slug>\S+)', 'GET', $post_type, 1, 1 );
+}
+
+// POST - update "count" for git-action post
+function update_gitaction ( $request ) {
+  $post_id = $request['id'];
+  $count = get_field('count', $post_id);
+  $count++;
+  update_field('count', $count, $post_id);
+  
+  $args = array(
+    'post_type' => 'git-actions',
+    'posts_per_page'=> 1, 
+    'numberposts'=> 1
+  );
+
+  if ($request['id']) {
+    $args['p'] = $request_data['id'];
+  }
+
+  $posts = get_posts($args);
+  foreach ($posts as $key => $post) {
+    $custom_fields = get_fields($post->ID);
+    foreach ($custom_fields as $field => $value) {
+      $posts[$key]->$field = $value;
+    }
+  }
+  return $posts[0];
+}
+
+function update_gitaction_via_slug ( $request ) {
+  $args = array(
+    'post_type' => 'git-actions',
+    'posts_per_page'=> 1, 
+    'numberposts'=> 1
+  );
+
+  if ($request['slug']) {
+    $args['name'] = $request_data['slug'];
+  }
+
+  $posts = get_posts($args);
+  foreach ($posts as $key => $post) {
+    $custom_fields = get_fields($post->ID);
+    foreach ($custom_fields as $field => $value) {
+      $posts[$key]->$field = $value;
+    }
+  }
+
+  $post = $posts[0];
+
+  $post_id = $post->ID;
+  $count = get_field('count', $post->ID);
+  $count++;
+  update_field('count', $count, $post->ID);
+  
+  $post->count = $count;
+  return $post;
+}
+
+function register_gitactions_post_endpoint () {
+  add_action( 'rest_api_init', 'add_custom_headers', 15);
+  register_rest_route( 'api/v1', 'git-actions/(?P<id>\d+)', array(
+    'methods' => 'POST',
+    'callback' => 'update_gitaction'
+  ));
+  register_rest_route( 'api/v1', 'git-actions/(?P<slug>\S+)', array(
+    'methods' => 'POST',
+    'callback' => 'update_gitaction_via_slug'
+  ));
+}
+add_action('rest_api_init', 'register_gitactions_post_endpoint');
