@@ -1,27 +1,27 @@
 const dotenv  = require('dotenv').config();
-const fs      = require('fs');
 const gulp    = require('gulp');
-const GulpSSH = require('gulp-ssh');
+const watch    = require('gulp-watch');
+const ftp    = require('vinyl-ftp');
+const logger = require('gulplog');
+
+const { SFTP_HOST, SFTP_USER, SFTP_PASS, SFTP_THEME_PATH } = process.env
 
 const config = {
-  host: process.env.SFTP_HOST,
-  port: process.env.SFTP_PORT,
-  username: process.env.SFTP_USER,
-  passphrase: process.env.SFTP_PASS,
-  privateKey: fs.readFileSync(process.env.SFTP_PRIVATE_KEY)
+  host: SFTP_HOST,
+  user: SFTP_USER,
+  password: SFTP_PASS,
+  parallel: 8,
+  log: logger.info,
 };
-
-const gulpSSH = new GulpSSH({
-  ignoreErrors: false,
-  sshConfig: config
-});
 
 gulp.task('deploy', () => {
   return gulp.src('dist/**/*')
-  .pipe(gulpSSH.dest(process.env.SFTP_THEME_PATH));
+  .pipe(conn.dest(SFTP_THEME_PATH));
 });
 
-gulp.task('deploy:watch', (done) => {
-  gulp.watch('dist/**/*', gulp.series('deploy'));
+gulp.task('deploy:watch', function (done) {
+  const conn = ftp.create(config);
+  watch('dist/**/*')
+    .pipe(conn.dest(SFTP_THEME_PATH));
   done();
 });
