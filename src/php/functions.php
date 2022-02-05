@@ -187,3 +187,75 @@ function remove_default_style_setup() {
   global $wp_styles;
   $wp_styles->queue = array();
 }
+
+function add_custom_headers() {
+  add_filter( 'rest_pre_serve_request', function( $value ) {
+    header( 'Access-Control-Allow-Headers: Authorization, X-WP-Nonce,Content-Type, X-Requested-With');
+    header( 'Access-Control-Allow-Origin: *' );
+    header( 'Access-Control-Allow-Methods: GET' );
+    header( 'Access-Control-Allow-Credentials: true' );
+    return $value;
+  } );
+}
+
+/**
+ * Register API Endpoints
+ * @param namespace { String } - endpoint vendor/version
+ * @param path { String } - endpoint name
+ * @param method { String } - endpoint request type
+ * @param post_type { String } - custom post type slug
+ * @param per_page { Int } - pagination limit
+ * @param num { Int } - maximum item count (-1 for all)
+ */
+
+function register_custom_post_type_endpoint( $namespace, $path, $method, $post_type, $per_page, $num ) {
+  add_action( 'rest_api_init', 'add_custom_headers', 15);
+  add_action( 'rest_api_init', function () use ( $namespace, $path, $method, $post_type, $per_page, $num ) {
+
+    register_rest_route( $namespace, $path, array(
+      'methods' => $method,
+      'callback' => function ( $request_data ) use ($namespace, $path, $method, $post_type, $per_page, $num ) {
+        $args = array(
+          'post_type' => $post_type,
+          'posts_per_page'=> $per_page, 
+          'numberposts'=> $num
+        );
+
+        if ($request_data['id']) {
+          $args['p'] = $request_data['id'];
+        }
+
+        if ($request_data['slug']) {
+          $args['name'] = $request_data['slug'];
+        }
+
+        $posts = get_posts($args);
+        foreach ($posts as $key => $post) {
+          $custom_fields = get_fields($post->ID);
+          foreach ($custom_fields as $field => $value) {
+            $posts[$key]->$field = $value;
+          }
+        }
+      }
+    ));
+  });
+};
+
+/**
+ * Enpoints - GET
+ * /<post-type-path>/       - get a list of <post_types>
+ * /<post-type-path>/:id    - get single <post_type> with matching id
+ * /<post-type-path>/:slug  - get single <post_type> with matching slug
+ */
+
+// $custom_post_types_arr = [
+//   'tracks' => 'track',
+//   'albums' => 'album',
+//   'music-videos' => 'music_video'
+// ];
+
+// foreach ($custom_post_types_arr as $path => $post_type) {
+//   register_custom_post_type_endpoint('api/v1', $path, 'GET', $post_type, -1, -1 );
+//   register_custom_post_type_endpoint('api/v1', $path.'/(?P<id>\d+)', 'GET', $post_type, 1, 1 );
+//   register_custom_post_type_endpoint('api/v1', $path.'/(?P<slug>\S+)', 'GET', $post_type, 1, 1 );
+// }
