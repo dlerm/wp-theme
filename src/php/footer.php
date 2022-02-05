@@ -8,7 +8,7 @@
     </nav>
     <div class="footer-content">
     <h1>Daniel Lerman</h1>
-    <h2>Front end developer</h2>
+    <h2>Associate Director, Development</h2>
       <div class="social-links social--horizontal">
         <a class="social-link linkedin" href="https://www.linkedin.com/in/daniel-lerman-2933498b" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
         <a class="social-link github" href="https://github.com/dlerm" target="_blank" rel="noopener noreferrer" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a>

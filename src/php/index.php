@@ -9,11 +9,12 @@
           <p class="h4 name-definition--phonetic"><span class="is-primary">[dan-yuh l] [luhr-man]</span><span class="is-secondary">[ dee ] [ money ]</span></p>
           <p class="h4 name-definition--part-speech bold">noun</p>
           <ul class="name-definition--definition-list">
-            <li class="definition-list--item"><h2>Development Lead<span class="desktop-only">, working at <a href="https://bvacommerce.com"  target="_blank" rel="noopener noreferrer">BVA</a></span></h2></li>
-            <li class="definition-list--item mobile-only">Developer for <a href="https://bvacommerce.com" target="_blank" rel="noopener noreferrer">BVA</a></li>
+            <li class="definition-list--item"><h2>Associate Director, Development<span class="desktop-only"> @ <a href="https://thestable.com"  target="_blank" rel="noopener noreferrer">The Stable</a></span></h2></li>
+            <li class="definition-list--item mobile-only">Working with <a href="https://thestable.com" target="_blank" rel="noopener noreferrer">The Stable</a></li>
             <li class="definition-list--item">Bachelor of Computer Science</li>
             <li class="definition-list--item">Based in San Diego, California</li>
             <li class="definition-list--item">Avid snowboarder</li>
+            <li class="definition-list--item"><?php echo get_field('count', 1284); ?> Commits since Feb 22'</li>
           </ul>
         </div>
       </div>
